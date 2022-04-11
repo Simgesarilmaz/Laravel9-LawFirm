@@ -30,7 +30,7 @@
 
 
     <!-- Template Stylesheet -->
-    <link type="text/css" rel="stylesheet" href="{{asset('assets')}}css/style.css">
+    <link type="text/css" rel="stylesheet" href="{{asset('assets')}}/css/style.css">
 
 
 </head>
