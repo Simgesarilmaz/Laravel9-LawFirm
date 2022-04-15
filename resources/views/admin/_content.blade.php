@@ -102,15 +102,15 @@
                 <div class="carousel-inner">
                     <div class="item active">
 
-                        <img src="assets/img/slideshow/1.jpg" alt="" />
+                        <img src="{{asset('assets')}}/img/slideshow/1.jpg" alt="" />
 
                     </div>
                     <div class="item">
-                        <img src="assets/img/slideshow/2.jpg" alt="" />
+                        <img src="{{asset('assets')}}/img/slideshow/2.jpg" alt="" />
 
                     </div>
                     <div class="item">
-                        <img src="assets/img/slideshow/3.jpg" alt="" />
+                        <img src="{{asset('assets')}}/img/slideshow/3.jpg" alt="" />
 
                     </div>
                 </div>

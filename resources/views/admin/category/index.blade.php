@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin Panel Home Page')
+@section('title', 'Category List')
 
 
 @section('content')
@@ -8,7 +8,7 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">BLANK PAGE</h1>
+                    <h1 class="page-head-line">Category List</h1>
                     <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
 
                 </div>
@@ -29,5 +29,4 @@
     </div>
     <!-- /. PAGE WRAPPER  -->
     </div>
-    <!-- /. WRAPPER  -->
 @endsection

@@ -21,7 +21,9 @@
 <body>
 <div id="wrapper">
     @include('admin._header')
+@section('_sidebar')
     @include('admin._sidebar')
+@show
     @yield('content')
     @include('admin._footer')
     @yield('footer')
