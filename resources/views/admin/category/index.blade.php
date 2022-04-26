@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.adminbase')
 
 @section('title', 'Category List')
 
@@ -8,7 +8,8 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Category List</h1>
+                    <a href="/admin/category/create"class="btn btn-lg btn-primary" style="width: 200px">Add Category</a>
+                    <h1 class="page-head-line"></h1>
                 </div>
             </div>
             <!-- /. ROW  -->

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.adminbase')
 
 @section('title', 'Add Category')
 
