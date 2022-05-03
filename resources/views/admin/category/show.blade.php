@@ -8,10 +8,10 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-sm-3">
-                    <a href="/admin/category/edit/{{$data->id}}" class="btn btn-info" style="width: 200px">Edit</a>
+                    <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-info" style="width: 200px">Edit</a>
                 </div>
                 <div class="col-sm-3">
-                    <a href="/admin/category/destroy/{{$data->id}}" onclick="return confirm('Deleting!! Are you sure?')" class="btn btn-danger" style="width: 200px">Delete</a>
+                    <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" onclick="return confirm('Deleting!! Are you sure?')" class="btn btn-danger" style="width: 200px">Delete</a>
                 </div>
             </div>
             <!-- /. ROW  -->

@@ -19,7 +19,7 @@
                         Category Elements
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="/admin/category/update/{{$data->id}}" method="post">
+                        <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label>Title</label>

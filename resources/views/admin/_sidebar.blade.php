@@ -19,7 +19,7 @@
 
             </li>
             <li>
-                <a href="{{route('admin_category')}}">
+                <a href="">
                     <i class="fa fa-calendar-o text-blue "></i>
                     Appointments
                     <span class="fa arrow"></span>
