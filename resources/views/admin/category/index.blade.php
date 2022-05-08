@@ -22,24 +22,22 @@
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>id</th>
+                                <th style="...">id</th>
+                                <th>Parent</th>
                                 <th>Title</th>
-                                <th>Keywords</th>
-                                <th>Description</th>
                                 <th>Image</th>
                                 <th>Status</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                                <th>Show</th>
+                                <th style="...">Edit</th>
+                                <th style="...">Delete</th>
+                                <th style="...">Show</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($data as $rs)
                             <tr>
                                 <td>{{$rs->id}}</td>
+                                <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</td>
                                 <td>{{$rs->title}}</td>
-                                <td>{{$rs->keywords}}</td>
-                                <td>{{$rs->description}}</td>
                                 <td>
                                     @if($rs->image)
                                         <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}"style="height: 40px ">
