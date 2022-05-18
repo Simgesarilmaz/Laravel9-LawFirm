@@ -40,14 +40,17 @@
                 </ul>
             </li>
             <li>
-                <a href="/admin/categories"><i class="fa fa-sitemap "></i>Categories</a>
+                <a href="/admin/category">
+                    <i class="fa fa-sitemap "></i>
+                    Category</a>
             </li>
-
+            <li>
+                <a href="/admin/service">
+                    <i class="fa fa-envelope"></i>
+                    Services</a>
+            </li>
             <li>
                 <a href="/admin/comments"><i class="fa fa-comment "></i>Comments</a>
-            </li>
-            <li>
-                <a href="/admin/services"><i class="fa fa-service "></i>Services</a>
             </li>
             <li>
                 <a href="/admin/images"><i class="fa fa-image "></i>Images</a>
