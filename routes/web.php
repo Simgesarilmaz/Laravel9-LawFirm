@@ -40,6 +40,18 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
     });
+
+    //******************ADMIN SERVICE ROUTES**************************
+    Route::prefix('/service')->name('service.')->controller(\App\Http\Controllers\Admin\AdminServiceController::class)->group(function() {
+
+        Route::get('/','index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store',  'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+        Route::get('/show/{id}', 'show')->name('show');
+    });
 });
 
 Route::get('/admin/login',[HomeController::class, 'login']);

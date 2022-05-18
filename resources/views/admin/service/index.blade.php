@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Category List')
+@section('title', 'Service List')
 
 
 @section('content')
@@ -8,14 +8,14 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{route('admin.category.create')}}"class="btn btn-lg btn-primary" style="width: 200px">Add Category</a>
+                    <a href="{{route('admin.service.create')}}"class="btn btn-lg btn-primary" style="width: 200px">Add Service</a>
                     <h1 class="page-head-line"></h1>
                 </div>
             </div>
             <!-- /. ROW  -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Category List
+                    Service List
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -23,8 +23,9 @@
                             <thead>
                             <tr>
                                 <th style="...">id</th>
-                                <th>Parent</th>
+                                <th>Category</th>
                                 <th>Title</th>
+                                <th>Detail</th>
                                 <th>Image</th>
                                 <th>Status</th>
                                 <th style="...">Edit</th>
@@ -38,15 +39,18 @@
                                     <td>{{$rs->id}}</td>
                                     <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</td>
                                     <td>{{$rs->title}}</td>
+                                    <td>{{$rs->detail}}</td>
+
+
                                     <td>
                                         @if($rs->image)
                                             <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}"style="height: 40px ">
                                         @endif
                                     </td>
                                     <td>{{$rs->status}}</td>
-                                    <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-info">Edit</a></td>
-                                    <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"onclick="return confirm('Deleting!! Are you sure?')"class="btn btn-danger">Delete</a></td>
-                                    <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}"class="btn btn-success">Show</a></td>
+                                    <td><a href="{{route('admin.service.edit',['id'=>$rs->id])}}" class="btn btn-info">Edit</a></td>
+                                    <td><a href="{{route('admin.service.destroy',['id'=>$rs->id])}}"onclick="return confirm('Deleting!! Are you sure?')"class="btn btn-danger">Delete</a></td>
+                                    <td><a href="{{route('admin.service.show',['id'=>$rs->id])}}"class="btn btn-success">Show</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
