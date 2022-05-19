@@ -29,23 +29,27 @@
                                 </tr>
                                 <tr>
                                     <th>Category</th>
-                                    <th>{{$data->category_id}}</th>
+                                    <td>
+                                        {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data->category,$data->category->title)}}
+
+                                    </td>
                                 </tr>
+
                                 <tr>
                                     <th>Title</th>
-                                    <th>{{$data->title}}</th>
+                                    <td>{{$data->title}}</td>
                                 </tr>
                                 <tr>
                                     <th>Keywords</th>
-                                    <th>{{$data->keywords}}</th>
+                                    <td>{{$data->keywords}}</td>
                                 </tr>
                                 <tr>
                                     <th>Description</th>
-                                    <th>{{$data->description}}</th>
+                                    <td>{{$data->description}}</td>
                                 </tr>
                                 <tr>
                                     <th>Detail</th>
-                                    <th>{{$data->detail}}</th>
+                                    <td>{{$data->detail}}</td>
                                 </tr>
                                 <tr>
                                     <th>Image</th>
@@ -55,15 +59,15 @@
                                 </tr>
                                 <tr>
                                     <th>Status</th>
-                                    <th>{{$data->status}}</th>
+                                    <td>{{$data->status}}</td>
                                 </tr>
                                 <tr>
                                     <th>Created Data</th>
-                                    <th>{{$data->created_at}}</th>
+                                    <td>{{$data->created_at}}</td>
                                 </tr>
                                 <tr>
                                     <th>Update Data</th>
-                                    <th>{{$data->updated_at}}</th>
+                                    <td>{{$data->updated_at}}</td>
                                 </tr>
                             </table>
                         </div>

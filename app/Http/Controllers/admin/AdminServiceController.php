@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminServiceController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
