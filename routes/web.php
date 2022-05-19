@@ -52,6 +52,16 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
     });
+    //******************ADMIN SERVICE IMAGE GALLERY ROUTES**************************
+    Route::prefix('/image')->name('image.')->controller(\App\Http\Controllers\Admin\ImageController::class)->group(function() {
+
+        Route::get('/{sid}','index')->name('index');
+        Route::get('/create/{sid}', 'create')->name('create');
+        Route::post('/store/{sid}',  'store')->name('store');
+        Route::post('/update/{sid}/{id}', 'update')->name('update');
+        Route::get('/destroy/{sid}/{id}', 'destroy')->name('destroy');
+
+    });
 });
 
 Route::get('/admin/login',[HomeController::class, 'login']);
