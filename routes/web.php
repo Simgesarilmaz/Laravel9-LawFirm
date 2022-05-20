@@ -56,9 +56,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::prefix('/image')->name('image.')->controller(\App\Http\Controllers\Admin\ImageController::class)->group(function() {
 
         Route::get('/{sid}','index')->name('index');
-        Route::get('/create/{sid}', 'create')->name('create');
+        Route::post('/create/{sid}', 'create')->name('create');
         Route::post('/store/{sid}',  'store')->name('store');
-        Route::post('/update/{sid}/{id}', 'update')->name('update');
         Route::get('/destroy/{sid}/{id}', 'destroy')->name('destroy');
 
     });
