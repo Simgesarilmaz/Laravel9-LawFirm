@@ -30,7 +30,7 @@
                                 <tr>
                                     <th>Category</th>
                                     <td>
-                                        {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data->category,$data->category->title)}}
+                                        {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data,$data->title)}}
 
                                     </td>
                                 </tr>
@@ -49,7 +49,7 @@
                                 </tr>
                                 <tr>
                                     <th>Detail</th>
-                                    <td>{{$data->detail}}</td>
+                                    <td>{!!$data->detail!!}</td>
                                 </tr>
                                 <tr>
                                     <th>Image</th>

@@ -1,7 +1,9 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Add Service')
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 
 @section('content')
     <div id="page-wrapper">
@@ -50,9 +52,19 @@
 
                             <div class="form-group">
                                 <label>Detail Information</label>
-                                <textarea class="form-control"  name="detail">
+                                <textarea class="textarea" id="detail"  name="detail">
 
                                 </textarea>
+                                <script>
+                                    ClassicEditor
+                                        .create( document.querySelector( '#detail' ) )
+                                        .then( editor => {
+                                            console.log( editor );
+                                        } )
+                                        .catch( error => {
+                                            console.error( error );
+                                        } );
+                                </script>
 
                             </div>
                             <div class="form-group">

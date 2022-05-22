@@ -25,7 +25,6 @@
                                 <th style="...">id</th>
                                 <th>Category</th>
                                 <th>Title</th>
-                                <th>Detail</th>
                                 <th>Image</th>
                                 <th>Image Gallery</th>
                                 <th>Status</th>
@@ -40,7 +39,6 @@
                                     <td>{{$rs->id}}</td>
                                     <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</td>
                                     <td>{{$rs->title}}</td>
-                                    <td>{{$rs->detail}}</td>
 
 
                                     <td>
