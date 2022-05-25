@@ -6,6 +6,7 @@
 @endsection
 @section('keywords','ceza hukuku,aile hukuku,siber hukuk,iş hukuku,avukat')
 @section('content')
+    @include('home.slider')
     <!-- About Start -->
     <div class="about">
         <div class="container">

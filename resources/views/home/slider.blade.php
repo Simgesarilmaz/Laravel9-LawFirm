@@ -6,32 +6,16 @@
         <li data-target="#carousel" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{asset('assets')}}/img/carousel-1.jpg" alt="Carousel Image">
+        @foreach($sliderdata as $order => $rs)
+        <div class="carousel-item {{ ($order==0) ? "active" : ""; }} ">
+            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="width: 1366px;height:600px ">
             <div class="carousel-caption">
-                <h1 class="animated fadeInLeft"><strong><i>We fight for your justice</i></strong></h1>
+                <h1 class="animated fadeInLeft">{{$rs->title}}</h1>
                 <p class="animated fadeInRight">Lorem ipsum dolor sit amet elit. Mauris odio mauris...</p>
                 <a class="btn animated fadeInUp" href="#">Get free consultation</a>
             </div>
         </div>
-
-        <div class="carousel-item">
-            <img src="{{asset('assets')}}/img/carousel-2.jpg" alt="Carousel Image">
-            <div class="carousel-caption">
-                <h1 class="animated fadeInLeft"><strong><i>We prepared to oppose for you</i></strong></h1>
-                <p class="animated fadeInRight">Lorem ipsum dolor sit amet elit. Mauris odio mauris...</p>
-                <a class="btn animated fadeInUp" href="#">Get free consultation</a>
-            </div>
-        </div>
-
-        <div class="carousel-item">
-            <img src="{{asset('assets')}}/img/carousel-3.jpg" alt="Carousel Image">
-            <div class="carousel-caption">
-                <h1 class="animated fadeInLeft"><strong><i>We fight for your privilege</i></strong></h1>
-                <p class="animated fadeInRight">Lorem ipsum dolor sit amet elit. Mauris odio mauris...</p>
-                <a class="btn animated fadeInUp" href="#">Get free consultation</a>
-            </div>
-        </div>
+        @endforeach
     </div>
 
     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">

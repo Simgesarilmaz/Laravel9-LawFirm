@@ -36,8 +36,6 @@
 </head>
 <body>
 @include('home._header')
-@include('home._slader')
-
 
 @section('content')
 

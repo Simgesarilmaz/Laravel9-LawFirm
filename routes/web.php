@@ -18,10 +18,7 @@ Route::get('/', function () {
 });
 Route::redirect('/anasayfa','/home');
 
-Route::get('/', function () {
-    return view('home.index',['name'=>'Simge Senem SARILMAZ']);
-    //
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/test/{id}', [HomeController::class, 'test']
 )->where('id', '[0-9]+');
