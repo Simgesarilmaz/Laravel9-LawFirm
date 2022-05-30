@@ -1,13 +1,13 @@
 @extends('layouts.home')
 
-@section('title', 'Laravel Hukuk Sitesi')
+@section('title', 'E Law Firm Project')
 @section('description')
     Kaybetme olasılığınızın %0.01 olduğu bir hukuk firmasıdır.
 @endsection
-@section('keywords','ceza hukuku,aile hukuku,siber hukuk,iş hukuku,avukat')
-@section('content')
+@section('slider')
     @include('home.slider')
-    <!-- About Start -->
+@endsection
+@section('content')
     <div class="about">
         <div class="container">
             <div class="row align-items-center">
@@ -36,84 +36,28 @@
     <!-- About End -->
 
     <!-- Service Start -->
+
     <div class="service">
         <div class="container">
+
             <div class="section-header">
                 <h2>Our Practices Areas</h2>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-landmark"></i>
-                        </div>
-                        <h3>Civil Law</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
-                        </p>
-                        <a class="btn" href="">Learn More</a>
-                    </div>
-                </div>
+                @foreach($servicelist1 as $rs)
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item">
                         <div class="service-icon">
                             <i class="fa fa-users"></i>
                         </div>
-                        <h3>Family Law</h3>
+                        <h3>{{$rs->title}}</h3>
                         <p>
-                            Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                            {{$rs->detail}}
                         </p>
                         <a class="btn" href="">Learn More</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-hand-holding-usd"></i>
-                        </div>
-                        <h3>Business Law</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
-                        </p>
-                        <a class="btn" href="">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-graduation-cap"></i>
-                        </div>
-                        <h3>Education Law</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
-                        </p>
-                        <a class="btn" href="">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-gavel"></i>
-                        </div>
-                        <h3>Criminal Law</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
-                        </p>
-                        <a class="btn" href="">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-globe"></i>
-                        </div>
-                        <h3>Cyber Law</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
-                        </p>
-                        <a class="btn" href="">Learn More</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

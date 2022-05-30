@@ -10,11 +10,23 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $page='home';
         $sliderdata=Service::limit(4)->get();
+        $servicelist1=Service::limit(6)->get();
         return view('home.index',[
-           'sliderdata'=>$sliderdata
+            'page'=>$page,
+           'sliderdata'=>$sliderdata,
+            'servicelist1'=>$servicelist1
         ]);
     }
+    public function service($id)
+    {
+        $data=Service::find($id);
+        return view('home.service',[
+            'data'=>$data
+        ]);
+    }
+
 
     public function login()
     {
