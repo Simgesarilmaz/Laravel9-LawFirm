@@ -4,10 +4,10 @@
 @section('description')
     Kaybetme olasılığınızın %0.01 olduğu bir hukuk firmasıdır.
 @endsection
-@section('slider')
-    @include('home.slider')
-@endsection
+@section('keywords','ceza hukuku,aile hukuku,siber hukuk,iş hukuku,avukat')
 @section('content')
+    @include('home.slider')
+    <!-- About Start -->
     <div class="about">
         <div class="container">
             <div class="row align-items-center">

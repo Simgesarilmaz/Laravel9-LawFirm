@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -22,6 +23,8 @@ class HomeController extends Controller
     public function service($id)
     {
         $data=Service::find($id);
+        $images= DB::table('images')->where('service_id',$id)->get();
+
         return view('home.service',[
             'data'=>$data
         ]);

@@ -12,7 +12,7 @@
             <div class="carousel-caption">
                 <h1 class="animated fadeInLeft">{{$rs->title}}</h1>
                 <p class="animated fadeInRight">Lorem ipsum dolor sit amet elit. Mauris odio mauris...</p>
-                <a class="btn animated fadeInUp" href="#">Get free consultation</a>
+                <a class="btn animated fadeInUp" href="{{route('service',['id'=>$rs->id])}}">Get free consultation</a>
             </div>
         </div>
         @endforeach
