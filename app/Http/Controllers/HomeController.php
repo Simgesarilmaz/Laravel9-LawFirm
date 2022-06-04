@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,6 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public static function maincategorylist()
+    {
+        return Category::where('parentid','=',0)->with('children')->get();
+    }
     public function index()
     {
         $page='home';

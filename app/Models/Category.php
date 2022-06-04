@@ -12,4 +12,12 @@ class Category extends Model
     {
         return $this->hasMany(Service::class);
     }
+    public function parent()
+    {
+        return $this->belongsTo(Category::class,'parentid');
+    }
+    public function children()
+    {
+        return $this->hasMany(Category::class,'parentid');
+    }
 }

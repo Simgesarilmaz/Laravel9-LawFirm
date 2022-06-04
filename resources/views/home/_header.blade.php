@@ -42,9 +42,17 @@
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
+                    @php
+                      $mainCategories=\App\Http\Controllers\HomeController::maincategorylist()
+                    @endphp
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav mr-auto">
+                        <div class="navbar-nav @if(!isset($page)) show-on-click @endif mr-auto">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
+                            <div class="dropdown-menu show-on-click">
+                                @foreach($mainCategories as $rs)
+                                <a href="#" class="dropdown-item">{{$rs->title}}</a>
+                                @endforeach
+                            </div>
                             <a href="index.html" class="nav-item nav-link active">Home</a>
                             <a href="about.html" class="nav-item nav-link">About</a>
                             <a href="service.html" class="nav-item nav-link">Practice</a>
