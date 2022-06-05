@@ -12,6 +12,7 @@ class HomeController extends Controller
 {
     public static function maincategorylist()
     {
+
         return Category::where('parentid','=',0)->with('children')->get();
     }
     public function index()
@@ -27,6 +28,17 @@ class HomeController extends Controller
     }
     public function service($id)
     {
+        $data=Service::find($id);
+        $images= DB::table('images')->where('service_id',$id)->get();
+
+        return view('home.service',[
+            'data'=>$data
+        ]);
+    }
+    public function categoryservices($id)
+    {
+        echo "Category Products";
+        exit();
         $data=Service::find($id);
         $images= DB::table('images')->where('service_id',$id)->get();
 

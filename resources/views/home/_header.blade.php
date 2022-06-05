@@ -46,12 +46,19 @@
                       $mainCategories=\App\Http\Controllers\HomeController::maincategorylist()
                     @endphp
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav @if(!isset($page)) show-on-click @endif mr-auto">
+                        <div class="navbar-nav mr-auto">
+                            <div class="nav-item @if(!@isset($page)) show-on-click @endif dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
-                            <div class="dropdown-menu show-on-click">
+                                <div class="dropdown-menu">
                                 @foreach($mainCategories as $rs)
-                                <a href="#" class="dropdown-item">{{$rs->title}}</a>
+                                    <a  class="dropdown-item">{{$rs->title}}</a>
+                                    <div class="row">
+                                        @if(count($rs->children))
+                                            @include('home.categorytree',['children'=>$rs->children])
+                                        @endif
+                                    </div>
                                 @endforeach
+                                </div>
                             </div>
                             <a href="index.html" class="nav-item nav-link active">Home</a>
                             <a href="about.html" class="nav-item nav-link">About</a>

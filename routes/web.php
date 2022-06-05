@@ -61,6 +61,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
 });
 
 Route::get('/service/{id}',[HomeController::class,'Service'])->name('service');
+Route::get('/categoryservices/{id}/{slug}',[HomeController::class,'categoryservices'])->name('categoryservices');
+
 
 Route::get('/admin/login',[HomeController::class, 'login']);
 Route::post('/admin/logincheck',[HomeController::class, 'logincheck'])->name('admin_logincheck');
