@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="logo">
-                            <a href="index.html">
+                            <a class="logo" href="{{route('home')}}">
                                 <h1>Kanun</h1>
-                               <!--   <img src="{{asset('assets')}}/img/logo.jpg" alt="Logo"> -->
+                                  <!--  <img src="{{asset('assets')}}/img/logo.jpg" alt="Logo"> -->
                             </a>
                         </div>
                     </div>

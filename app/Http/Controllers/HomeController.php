@@ -32,18 +32,19 @@ class HomeController extends Controller
         $images= DB::table('images')->where('service_id',$id)->get();
 
         return view('home.service',[
-            'data'=>$data
+            'data'=>$data,
+            'images'=>$images
         ]);
     }
     public function categoryservices($id)
     {
         echo "Category Products";
         exit();
-        $data=Service::find($id);
-        $images= DB::table('images')->where('service_id',$id)->get();
-
-        return view('home.service',[
-            'data'=>$data
+        $category=Service::find($id);
+        $services= DB::table('services')->where('category_id',$id)->get();
+        return view('home.categoryservices',[
+            'category'=>$category,
+            'services'=>$services
         ]);
     }
 

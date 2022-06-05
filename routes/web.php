@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
-Route::redirect('/anasayfa','/home');
+Route::get('/',[HomeController::class,'index'])->name('home');
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('/home', [HomeController::class, 'index']);
+
 Route::get('/test/{id}', [HomeController::class, 'test']
 )->where('id', '[0-9]+');
 
+Route::post('/save',[HomeController::class,'save'])->name('save');
 //Admin
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/',[App\Http\Controllers\Admin\HomeController::class, 'index'])->name('index');
