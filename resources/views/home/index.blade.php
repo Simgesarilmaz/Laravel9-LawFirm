@@ -48,13 +48,13 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item">
                         <div class="service-icon">
-                            <i class="fa fa-users"></i>
+                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="height: 200px;width: 350px">
                         </div>
                         <h3>{{$rs->title}}</h3>
                         <p>
                             {{$rs->detail}}
                         </p>
-                        <a class="btn" href="">Learn More</a>
+                        <a class="btn" href="{{route('service',['id'=>$rs->id])}}">Learn More</a>
                     </div>
                 </div>
                 @endforeach

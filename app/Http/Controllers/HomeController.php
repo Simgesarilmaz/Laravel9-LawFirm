@@ -38,9 +38,8 @@ class HomeController extends Controller
     }
     public function categoryservices($id)
     {
-        echo "Category Products";
-        exit();
-        $category=Service::find($id);
+
+        $category=Category::find($id);
         $services= DB::table('services')->where('category_id',$id)->get();
         return view('home.categoryservices',[
             'category'=>$category,
