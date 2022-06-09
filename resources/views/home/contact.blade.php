@@ -55,7 +55,9 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-form">
-                        <form>
+                        <h1>{{\Illuminate\Support\Facades\Session::get('info')}}</h1>
+                        <form id="checkout-form" action="{{route('storemessage')}}" class="clearfix" method="post">
+                            @csrf
                             <div class="form-group">
                                 <input type="text" class="form-control" name="name" placeholder="Name & Surname" required="required" />
                             </div>
@@ -69,7 +71,7 @@
                                 <input type="text" class="form-control" name="subject" placeholder="Subject" required="required" />
                             </div>
                             <div class="form-group">
-                                <textarea type="text" class="form-control" placeholder="Message" required="required" ></textarea>
+                                <textarea type="text" class="form-control" name="message" placeholder="Your Message" required="required" ></textarea>
                             </div>
                             <div>
                                 <button class="btn" type="submit">Send Message</button>

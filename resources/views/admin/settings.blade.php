@@ -2,8 +2,7 @@
 
 @section('title', 'Settings')
 @section('head')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
 @section('content')
     <div id="page-wrapper">
@@ -12,7 +11,7 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-sm-10">
-                        <h1 class="page-head-line">Settings</h1>
+                            <h1 class="page-head-line">Settings</h1>
                         </div>
                         <div class="col-sm-2">
                             <ol class="breadcrumb" style="padding-top: 25px;background: transparent;text-align: end;">
@@ -73,7 +72,8 @@
                                     </ul>
                                 </div>
                                 <div class="tab-content" id="custom-tabs-one-tabContent">
-                                    <div class="tab-pane fade active in" id="custom-tabs-one-general" role="tabpanel" aria-labelledby="custom-tabs-one-general-tab">
+                                    <div class="tab-pane fade active in" id="custom-tabs-one-general" role="tabpanel"
+                                         aria-labelledby="custom-tabs-one-general-tab">
                                         <input type="hidden" id="id" name="id" value="{{$data->id}}"
                                                class="form-control">
                                         <div class="form-group">
@@ -120,96 +120,97 @@
                                             </select>
                                         </div>
                                     </div>
-                                        <div class="tab-pane fade" id="custom-tabs-one-smtp" role="tabpanel"
-                                             aria-labelledby="custom-tabs-one-smtp-tab">
-                                            <div class="form-group">
-                                                <label>Smtp Server</label>
-                                                <input class="form-control" type="text" name="smtpserver"
-                                                       value="{{$data->smtpserver}}">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Smtp Email</label>
-                                                <input class="form-control" type="text" name="smtpemail"
-                                                       value="{{$data->smtpemail}}">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Smtppassword </label>
-                                                <input class="form-control" type="password" name="smtppassword"
-                                                       value="{{$data->smtppassword}}">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Smtpport </label>
-                                                <input class="form-control" type="number" name="smtpport"
-                                                       value="{{$data->smtpport}}">
-                                            </div>
+                                    <div class="tab-pane fade" id="custom-tabs-one-smtp" role="tabpanel"
+                                         aria-labelledby="custom-tabs-one-smtp-tab">
+                                        <div class="form-group">
+                                            <label>Smtp Server</label>
+                                            <input class="form-control" type="text" name="smtpserver"
+                                                   value="{{$data->smtpserver}}">
                                         </div>
-                                        <div class="tab-pane fade" id="custom-tabs-one-social" role="tabpanel"
-                                             aria-labelledby="custom-tabs-one-social-tab">
-                                            <div class="form-group">
-                                                <label>Fax</label>
-                                                <input class="form-control" type="text" name="fax"
-                                                       value="{{$data->fax}}">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Facebook</label>
-                                                <input class="form-control" type="text" name="facebook"
-                                                       value="{{$data->facebook}}">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Instagram</label>
-                                                <input class="form-control" type="text" name="instagram"
-                                                       value="{{$data->instagram}}">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Youtube</label>
-                                                <input class="form-control" type="text" name="youtube"
-                                                       value="{{$data->youtube}}">
-                                            </div>
+                                        <div class="form-group">
+                                            <label>Smtp Email</label>
+                                            <input class="form-control" type="text" name="smtpemail"
+                                                   value="{{$data->smtpemail}}">
                                         </div>
-                                        <div class="tab-pane fade" id="custom-tabs-one-about" role="tabpanel"
-                                             aria-labelledby="custom-tabs-one-about-tab">
-                                            <div class="form-group">
-                                                <label>About Us</label>
-                                                <textarea id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
-                                            </div>
+                                        <div class="form-group">
+                                            <label>Smtppassword </label>
+                                            <input class="form-control" type="password" name="smtppassword"
+                                                   value="{{$data->smtppassword}}">
                                         </div>
-                                        <div class="tab-pane fade" id="custom-tabs-one-contact" role="tabpanel"
-                                             aria-labelledby="custom-tabs-one-contact-tab">
-                                            <div class="form-group">
-                                                <label>Reference</label>
-                                                <textarea id="contact" name="contact">{{$data->contact}}</textarea>
-                                            </div>
+                                        <div class="form-group">
+                                            <label>Smtpport </label>
+                                            <input class="form-control" type="number" name="smtpport"
+                                                   value="{{$data->smtpport}}">
                                         </div>
-                                        <div class="tab-pane fade" id="custom-tabs-one-references" role="tabpanel"
-                                             aria-labelledby="custom-tabs-one-references-tab">
-                                            <div class="form-group">
-                                                <label>References</label>
-                                                <textarea id="references"
-                                                          name="references">{{$data->references}}</textarea>
-                                            </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="custom-tabs-one-social" role="tabpanel"
+                                         aria-labelledby="custom-tabs-one-social-tab">
+                                        <div class="form-group">
+                                            <label>Fax</label>
+                                            <input class="form-control" type="text" name="fax"
+                                                   value="{{$data->fax}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Facebook</label>
+                                            <input class="form-control" type="text" name="facebook"
+                                                   value="{{$data->facebook}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Instagram</label>
+                                            <input class="form-control" type="text" name="instagram"
+                                                   value="{{$data->instagram}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Youtube</label>
+                                            <input class="form-control" type="text" name="youtube"
+                                                   value="{{$data->youtube}}">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="custom-tabs-one-about" role="tabpanel"
+                                         aria-labelledby="custom-tabs-one-about-tab">
+                                        <div class="form-group">
+                                            <label>About Us</label>
+                                            <textarea id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="custom-tabs-one-contact" role="tabpanel"
+                                         aria-labelledby="custom-tabs-one-contact-tab">
+                                        <div class="form-group">
+                                            <label>Reference</label>
+                                            <textarea id="contact" name="contact">{{$data->contact}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="custom-tabs-one-references" role="tabpanel"
+                                         aria-labelledby="custom-tabs-one-references-tab">
+                                        <div class="form-group">
+                                            <label>References</label>
+                                            <textarea id="references"
+                                                      name="references">{{$data->references}}</textarea>
+                                        </div>
 
-                                        </div>
-                                        <div class="card-footer">
-                                            <button type="submit" class="btn btn-info">Update Setting</button>
-                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-info">Update Setting</button>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-    @endsection
-    <!-- /. WRAPPER  -->
+    </div>
+@endsection
+<!-- /. WRAPPER  -->
+@section('footer')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#aboutus').summernote();
+            $('#contact').summernote();
+            $('#references').summernote();
+        });
+    </script>
 
-        @section('foot')
-            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-            <script>
-                $(document).ready(function () {
-                    $('#aboutus').summernote();
-                    $('#contact').summernote();
-                    $('#references').summernote();
-                });
-            </script>
 @endsection
 

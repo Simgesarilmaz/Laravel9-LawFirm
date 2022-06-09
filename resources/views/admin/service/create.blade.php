@@ -55,16 +55,7 @@
                                 <textarea class="textarea" id="detail"  name="detail">
 
                                 </textarea>
-                                <script>
-                                    ClassicEditor
-                                        .create( document.querySelector( '#detail' ) )
-                                        .then( editor => {
-                                            console.log( editor );
-                                        } )
-                                        .catch( error => {
-                                            console.error( error );
-                                        } );
-                                </script>
+
 
                             </div>
                             <div class="form-group">
@@ -97,3 +88,16 @@
     </div>
     <!-- /. PAGE WRAPPER  -->
 @endsection
+@section('footer')
+            <script>
+                ClassicEditor
+                    .create( document.querySelector( '#detail' ) )
+                    .then( editor => {
+                        console.log( editor );
+                    } )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+            </script>
+@endsection
+

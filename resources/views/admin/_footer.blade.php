@@ -9,7 +9,8 @@
 <script src="{{asset('assets')}}/js/bootstrap.js"></script>
 <!-- METISMENU SCRIPTS -->
 <script src="{{asset('assets')}}/js/jquery.metisMenu.js"></script>
-<!-- CUSTOM SCRIPTS -->
+<!-- CUSTOM SCRIPTS
 <script src="{{asset('assets')}}/js/custom.js"></script>
+-->
 
 
