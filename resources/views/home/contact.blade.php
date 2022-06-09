@@ -55,7 +55,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-form">
-                        <h1>{{\Illuminate\Support\Facades\Session::get('info')}}</h1>
+                        @include('home.messages')
                         <form id="checkout-form" action="{{route('storemessage')}}" class="clearfix" method="post">
                             @csrf
                             <div class="form-group">
