@@ -30,6 +30,38 @@ class HomeController extends Controller
             'servicelist1'=>$servicelist1
         ]);
     }
+    public function about()
+    {
+        $setting=Setting::first();
+
+        return view('home.about',[
+            'setting'=>$setting,
+
+        ]);
+    }
+    public function references()
+    {
+        echo "references";
+        exit();
+        $setting=Setting::first();
+
+        return view('home.index',[
+            'setting'=>$setting,
+
+        ]);
+    }
+    public function contact()
+    {
+        echo "contact";
+        exit();
+        $setting=Setting::first();
+
+        return view('home.about',[
+            'setting'=>$setting,
+
+        ]);
+    }
+
     public function service($id)
     {
         $data=Service::find($id);
