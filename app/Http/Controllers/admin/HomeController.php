@@ -49,9 +49,6 @@ class HomeController extends Controller
         $data->aboutus=$request->input('aboutus');
         $data->contact=$request->input('contact');
         $data->references=$request->input('references');
-        if($request->file('icon')){
-            $data->icon= $request->file('icon')->store('images');
-        }
         $data->status=$request->input('status');
         $data->save();
         return redirect()->route('admin.settings');

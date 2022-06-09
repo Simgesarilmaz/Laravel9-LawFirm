@@ -119,14 +119,6 @@
                                                 <option>False</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">Icon</label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input class="custom-file-input" type="file" name="icon">
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                         <div class="tab-pane fade" id="custom-tabs-one-smtp" role="tabpanel"
                                              aria-labelledby="custom-tabs-one-smtp-tab">
