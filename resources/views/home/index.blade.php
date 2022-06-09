@@ -1,10 +1,10 @@
 @extends('layouts.home')
 
-@section('title', 'E Law Firm Project')
-@section('description')
-    Kaybetme olasılığınızın %0.01 olduğu bir hukuk firmasıdır.
-@endsection
-@section('keywords','ceza hukuku,aile hukuku,siber hukuk,iş hukuku,avukat')
+@section('title', $setting->title)
+@section('description',$setting->description)
+@section('keywords',$setting->keywords)
+@section('icon',\Illuminate\Support\Facades\Storage::url($setting->icon))
+
 @section('content')
     @include('home.slider')
     <!-- About Start -->

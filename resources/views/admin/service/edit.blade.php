@@ -23,7 +23,8 @@
                         Service Elements
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="{{route('admin.service.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                        <form role="form" action="{{route('admin.service.update',['id'=>$data->id])}}" method="post"
+                              enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
@@ -31,7 +32,8 @@
 
                                     <select class="form-control-select2" name="category_id" style="...">
                                         @foreach($datalist as $rs)
-                                            <option value="{{$rs->id}}" @if($rs->id==$data->category_id) selected="selected" @endif>
+                                            <option value="{{$rs->id}}"
+                                                    @if($rs->id==$data->category_id) selected="selected" @endif>
                                                 {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}
                                             </option>
                                         @endforeach
@@ -50,24 +52,27 @@
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
-                                <input class="form-control" type="text" name="description" value="{{$data->description}}">
+                                <input class="form-control" type="text" name="description"
+                                       value="{{$data->description}}">
 
                             </div>
 
 
-                    <div class="form-group">
-                        <label>Detail Information</label>
+                            <div class="form-group">
+                                <label>Detail Information</label>
 
-                        <textarea class="textarea" id="detail" name="detail" type="text">
+                                <textarea class="textarea" id="detail" name="detail" type="text">
 
                           {{$data->detail}}
                         </textarea>
 
-                    </div>
+                            </div>
                             <div class="form-group">
-                                <label>Image</label>
+                                <label for="exampleInputFile">Image</label>
                                 <div class="input-group">
-                                <input class="custom-file-input" type="file" name="image">
+                                    <div class="custom-file">
+                                        <input class="custom-file-input" type="file" name="image">
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -80,21 +85,20 @@
                             </div>
 
 
-                            <button type="submit" class="btn btn-info">Update Data </button>
+                            <button type="submit" class="btn btn-info">Update Data</button>
 
                         </form>
                     </div>
                 </div>
             </div>
-        <!-- /. PAGE INNER  -->
-    </div>
-    <!-- /. PAGE WRAPPER  -->
-@endsection
-@section('foot')
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+        @endsection
+        @section('foot')
             <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
             <script>
-                $(function ()
-                {
+                $(function () {
                     //Summernote
                     $('.textarea').summernote()
                 })

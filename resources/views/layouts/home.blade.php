@@ -9,9 +9,12 @@
     <meta content="Law Firm Website Template" name="description">
 
     <title> @yield('title') </title>
-    <meta name="description" content="@yield('description')">
-    <meta name="keywords" content="@yield('keywords')>
+
+
+    <meta name="description" content="@yield("description")">
+    <meta name="keywords" content="@yield("keywords")">
     <meta name="author" content="Simge Sarilmaz">
+    <link rel="icon" type="image/x-icon" href="@yield("icon")">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">

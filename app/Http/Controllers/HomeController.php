@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Service;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -20,8 +21,11 @@ class HomeController extends Controller
         $page='home';
         $sliderdata=Service::limit(4)->get();
         $servicelist1=Service::limit(6)->get();
+        $setting=Setting::first();
+
         return view('home.index',[
             'page'=>$page,
+           'setting'=>$setting,
            'sliderdata'=>$sliderdata,
             'servicelist1'=>$servicelist1
         ]);

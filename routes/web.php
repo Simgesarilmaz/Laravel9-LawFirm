@@ -26,7 +26,10 @@ Route::post('/save',[HomeController::class,'save'])->name('save');
 //Admin
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/',[App\Http\Controllers\Admin\HomeController::class, 'index'])->name('index');
-//******************ADMIN CATEGORY ROUTES**************************
+//******************GENERAL ROUTES**************************
+    Route::get('/settings',[\App\Http\Controllers\Admin\HomeController::class,'settings'])->name('settings');
+    Route::post('/settings',[\App\Http\Controllers\Admin\HomeController::class,'settingsUpdate'])->name('settings.update');
+    //******************ADMIN CATEGORY ROUTES**************************
     Route::prefix('/category')->name('category.')->controller(\App\Http\Controllers\Admin\CategoryController::class)->group(function() {
 
         Route::get('/','index')->name('index');
