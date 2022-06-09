@@ -10,13 +10,17 @@
         <div id="page-inner">
             <div class="panel-body">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Settings</h1>
-                    <div class="col-sm-2">
-                        <ol class="breadcrumb">
-                            <li><a href="{{route('admin.index')}}">Home</a></li>
-                            <li class="active">Settings</li>
+                    <div class="row">
+                        <div class="col-sm-10">
+                        <h1 class="page-head-line">Settings</h1>
+                        </div>
+                        <div class="col-sm-2">
+                            <ol class="breadcrumb" style="padding-top: 25px;background: transparent;text-align: end;">
+                                <li><a href="{{route('admin.index')}}">Home</a></li>
+                                <li class="active">Settings</li>
 
-                        </ol>
+                            </ol>
+                        </div>
                     </div>
                 </div>
 
@@ -69,9 +73,7 @@
                                     </ul>
                                 </div>
                                 <div class="tab-content" id="custom-tabs-one-tabContent">
-                                    <div class="tab-pane fade active in" id="custom-tabs-one-general"
-                                         role="tabpanel"
-                                         aria-labelledby="custom-tabs-one-general-tab">
+                                    <div class="tab-pane fade active in" id="custom-tabs-one-general" role="tabpanel" aria-labelledby="custom-tabs-one-general-tab">
                                         <input type="hidden" id="id" name="id" value="{{$data->id}}"
                                                class="form-control">
                                         <div class="form-group">
@@ -125,7 +127,7 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                    </div>
                                         <div class="tab-pane fade" id="custom-tabs-one-smtp" role="tabpanel"
                                              aria-labelledby="custom-tabs-one-smtp-tab">
                                             <div class="form-group">
