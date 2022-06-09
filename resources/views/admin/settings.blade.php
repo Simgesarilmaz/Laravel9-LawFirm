@@ -2,7 +2,7 @@
 
 @section('title', 'Settings')
 @section('head')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
 @endsection
 @section('content')
@@ -201,6 +201,7 @@
         </div>
     @endsection
     <!-- /. WRAPPER  -->
+
         @section('foot')
             <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
             <script>

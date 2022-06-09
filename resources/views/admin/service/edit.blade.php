@@ -2,11 +2,9 @@
 
 @section('title', 'Edit Service:'.$data->title)
 @section('head')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
 @endsection
-
-
 @section('content')
     <div id="page-wrapper">
         <div id="page-inner">
@@ -60,11 +58,9 @@
 
                             <div class="form-group">
                                 <label>Detail Information</label>
-
                                 <textarea class="textarea" id="detail" name="detail" type="text">
-
-                          {{$data->detail}}
-                        </textarea>
+                                    {{$data->detail}}
+                                </textarea>
 
                             </div>
                             <div class="form-group">
@@ -93,14 +89,15 @@
             </div>
             <!-- /. PAGE INNER  -->
         </div>
-        <!-- /. PAGE WRAPPER  -->
-        @endsection
-        @section('foot')
-            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-            <script>
-                $(function () {
-                    //Summernote
-                    $('.textarea').summernote()
-                })
-            </script>
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+@endsection
+@section('foot')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(function () {
+            //Summernote
+            $('.textarea').summernote()
+        })
+    </script>
 @endsection
