@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Add Service')
+@section('title', 'Service List')
 @section('head')
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection

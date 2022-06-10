@@ -56,7 +56,7 @@
                 <a href="/admin/images"><i class="fa fa-image "></i>Images</a>
             </li>
             <li>
-                <a href="/admin/messages">
+                <a href="/admin/message">
                     <i class="fa fa-envelope"></i>
                     Messages</a>
             </li>

@@ -74,6 +74,7 @@ class HomeController extends Controller
         $data->subject = $request->input('subject');
         $data->message = $request->input('message');
         $data->ip=$request->ip();
+        $data->status=$request->status;
         $data->save();
         return redirect()->route('contact')->with('info','Your message has been sent,Thank you.');
 
