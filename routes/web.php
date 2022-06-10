@@ -66,6 +66,15 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('/destroy/{sid}/{id}', 'destroy')->name('destroy');
 
     });
+    //******************ADMIN MESSAGE ROUTES**************************
+    Route::prefix('/message')->name('message.')->controller(\App\Http\Controllers\Admin\MessageController::class)->group(function() {
+
+        Route::get('/','index')->name('index');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::post('/update/{id}',  'update')->name('update');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+
+    });
 });
 
 Route::get('/service/{id}',[HomeController::class,'Service'])->name('service');
