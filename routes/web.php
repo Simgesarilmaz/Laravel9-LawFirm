@@ -75,6 +75,18 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
 
     });
+    //******************ADMIN FAQ ROUTES**************************
+    Route::prefix('/faq')->name('faq.')->controller(\App\Http\Controllers\Admin\FaqController::class)->group(function() {
+
+        Route::get('/','index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store',  'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+        Route::get('/show/{id}', 'show')->name('show');
+
+    });
 });
 
 Route::get('/service/{id}',[HomeController::class,'Service'])->name('service');

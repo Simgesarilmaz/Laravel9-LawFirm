@@ -56,13 +56,13 @@
                 <a href="/admin/images"><i class="fa fa-image "></i>Images</a>
             </li>
             <li>
-                <a href="/admin/message">
+                <a href="{{route('admin.message.index')}}">
                     <i class="fa fa-envelope"></i>
                     Messages</a>
             </li>
 
             <li>
-                <a href="/admin/faq">
+                <a href="{{route('admin.faq.index')}}">
                     <i class="fa fa-question "></i>
                     FAQ</a>
             </li>
