@@ -55,7 +55,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact-form">
-                        @include('home.message')
+                        @include('home.messages')
                         <form id="checkout-form" action="{{route('storemessage')}}" class="clearfix" method="post">
                             @csrf
                             <div class="form-group">

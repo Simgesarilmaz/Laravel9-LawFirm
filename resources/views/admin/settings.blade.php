@@ -170,21 +170,21 @@
                                          aria-labelledby="custom-tabs-one-about-tab">
                                         <div class="form-group">
                                             <label>About Us</label>
-                                            <textarea id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
+                                            <textarea class="textarea summernote" id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="custom-tabs-one-contact" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-contact-tab">
                                         <div class="form-group">
                                             <label>Reference</label>
-                                            <textarea id="contact" name="contact">{{$data->contact}}</textarea>
+                                            <textarea class="textarea summernote" id="contact" name="contact">{{$data->contact}}</textarea>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="custom-tabs-one-references" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-references-tab">
                                         <div class="form-group">
                                             <label>References</label>
-                                            <textarea id="references"
+                                            <textarea class="textarea summernote" id="references"
                                                       name="references">{{$data->references}}</textarea>
                                         </div>
 
@@ -201,16 +201,5 @@
         </div>
     </div>
 @endsection
-<!-- /. WRAPPER  -->
-@section('footer')
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#aboutus').summernote();
-            $('#contact').summernote();
-            $('#references').summernote();
-        });
-    </script>
 
-@endsection
 

@@ -1,9 +1,6 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Message List')
-@section('head')
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-@endsection
 
 @section('content')
     <div id="page-wrapper">
@@ -88,16 +85,3 @@
     </div>
     <!-- /. PAGE WRAPPER  -->
 @endsection
-@section('footer')
-            <script>
-                ClassicEditor
-                    .create( document.querySelector( '#detail' ) )
-                    .then( editor => {
-                        console.log( editor );
-                    } )
-                    .catch( error => {
-                        console.error( error );
-                    } );
-            </script>
-@endsection
-

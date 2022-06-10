@@ -70,6 +70,7 @@
                                     <a href="single.html" class="dropdown-item">Single Page</a>
                                 </div>
                             </div>
+                            <a href="{{route('faq')}}" class="nav-item nav-link">FAQ</a>
                             <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="ml-auto">
