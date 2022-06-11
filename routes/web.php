@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +42,8 @@ Route::post('/save', [HomeController::class, 'save'])->name('save');
 //****************** User Auths ROUTES**************************
 Route::middleware('auth')->group(function () {
 //****************** USER ROUTES********************************
-    Route::middleware('userx')->prefix('userx')->name('userx.')->group(function () {
+    Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('index');
 
     });
 //Admin

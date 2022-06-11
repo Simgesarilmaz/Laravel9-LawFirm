@@ -45,7 +45,7 @@
                                                                                                class="text-uppercase">Join</a>
                                 @endguest
                                 <ul class="dropdown-menu">
-                                    <li><a href="#"><i class="fa fa-user-o"></i>My Account</a></li>
+                                    <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user-o"></i>My Account</a></li>
                                     <li><a href="#"><i class="fa fa-check"></i>Checkout</a></li>
                                     <li><a href="#"><i class="fa fa-unlock-alt"></i>Log in </a></li>
                                     <li><a href="#"><i class="fa fa-user"></i>Create An Account</a></li>
