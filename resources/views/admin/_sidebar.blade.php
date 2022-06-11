@@ -68,7 +68,7 @@
                     FAQ</a>
             </li>
             <li>
-                <a href="/admin/users"><i class="fa fa-users"></i>Users</a>
+                <a href="{{route('admin.user.index')}}"><i class="fa fa-users"></i>Users</a>
             </li>
             <li>
                 <a href="/admin/profile"><i class="fa fa-sitemap "></i>Profile</a>

@@ -177,7 +177,7 @@
                                          aria-labelledby="custom-tabs-one-contact-tab">
                                         <div class="form-group">
                                             <label>Reference</label>
-                                            <textarea class="textarea summernote" id="contact" name="contact">{{$data->contact}}</textarea>
+                                            <textarea class="textarea summernote" id="contact" name="contact" type="text">{{$data->contact}}</textarea>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="custom-tabs-one-references" role="tabpanel"
@@ -185,7 +185,7 @@
                                         <div class="form-group">
                                             <label>References</label>
                                             <textarea class="textarea summernote" id="references"
-                                                      name="references">{{$data->references}}</textarea>
+                                                      name="references"type="text">{{$data->references}}</textarea>
                                         </div>
 
                                     </div>
