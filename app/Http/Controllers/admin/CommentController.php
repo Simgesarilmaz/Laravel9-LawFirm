@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
+use App\Models\Message;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -14,7 +16,8 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $data=Comment::all();
+        return view('admin.comment.index',['data'=>$data]);
     }
 
     /**
@@ -46,7 +49,9 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+        $data=Comment::find($id);
+        return view('admin.comment.show',['data'=>$data]);
+
     }
 
     /**
@@ -69,7 +74,10 @@ class CommentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data=Comment::find($id);
+        $data->status=$request->status;
+        $data->save();
+        return redirect(route('admin.comment.show',['id'=>$id]));
     }
 
     /**
