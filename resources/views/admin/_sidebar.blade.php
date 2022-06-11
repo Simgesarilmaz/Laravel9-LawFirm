@@ -50,7 +50,7 @@
                     Services</a>
             </li>
             <li>
-                <a href="/admin/comments"><i class="fa fa-comment "></i>Comments</a>
+                <a href="{{route('admin.comment.index')}}"><i class="fa fa-comment "></i>Comments</a>
             </li>
             <li>
                 <a href="/admin/images"><i class="fa fa-image "></i>Images</a>

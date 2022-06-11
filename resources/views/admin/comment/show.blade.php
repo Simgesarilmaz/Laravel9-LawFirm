@@ -1,6 +1,6 @@
 @extends('layouts.adminwindow')
 
-@section('title', 'Show Message:'.$data->title);
+@section('title', 'Show Comment:'.$data->title);
 
 
 @section('content')
@@ -8,7 +8,7 @@
     <section class="content">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Details Messages
+                Details Comment
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
@@ -17,30 +17,25 @@
                             <th style="width: 200px">Id</th>
                             <th>{{$data->id}}</th>
                         </tr>
-
+                        <tr>
+                            <th>Service</th>
+                            <td>{{$data->service->title}}</td>
+                        </tr>
                         <tr>
                             <th>Name & Surname</th>
-                            <td>{{$data->name}}</td>
-                        </tr>
-                        <tr>
-                            <th>Phone</th>
-                            <td>{{$data->phone}}</td>
-                        </tr>
-                        <tr>
-                            <th>Email</th>
-                            <td>{{$data->email}}</td>
+                            <td>{{$data->user->name}}</td>
                         </tr>
                         <tr>
                             <th>Subject</th>
                             <td>{{$data->subject}}</td>
                         </tr>
                         <tr>
-                            <th>Message</th>
-                            <td>{{$data->message}}</td>
+                            <th>Review</th>
+                            <td>{{$data->comment}}</td>
                         </tr>
                         <tr>
                             <th>Ip Number</th>
-                            <td>{{$data->ip}}</td>
+                            <td>{{$data->IP}}</td>
                         </tr>
                         <tr>
                             <th>Status</th>
@@ -54,7 +49,22 @@
                             <th>Update Data</th>
                             <td>{{$data->updated_at}}</td>
                         </tr>
-
+                        <tr>
+                            <th>Admin Note :</th>
+                            <td>
+                                <form role="form" action="{{route('admin.comment.update',['id'=>$data->id])}}" method="post">
+                                    @csrf
+                                    <select name="status">
+                                        <option selected>{{$data->status}}</option>
+                                        <option>True</option>
+                                        <option>False</option>
+                                    </select>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Update Comment</button>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
 
                     </table>
                 </div>
