@@ -4,12 +4,13 @@
         <ul class="nav" id="main-menu">
             <li>
                 <div class="user-img-div">
-                    <img src="{{asset('assets')}}/img/user.png" class="img-thumbnail" />
+                    <img src="{{asset('assets')}}/admin/img/user.png" class="img-thumbnail" />
 
                     <div class="inner-text">
                         Jhon Deo Alex
                         <br />
-                        <small>Last Login : 2 Weeks Ago </small>
+
+                        <a href="/logoutuser" class="text-uppercase">Logout</a>
 
                     </div>
                 </div>

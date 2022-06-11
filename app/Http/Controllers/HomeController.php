@@ -68,6 +68,7 @@ class HomeController extends Controller
 
         ]);
     }
+
     public function faq()
     {
         $setting = Setting::first();
@@ -88,24 +89,25 @@ class HomeController extends Controller
         $data->phone = $request->input('phone');
         $data->subject = $request->input('subject');
         $data->message = $request->input('message');
-        $data->ip=$request->ip();
-        $data->status=$request->status;
+        $data->ip = $request->ip();
+        $data->status = $request->status;
         $data->save();
-        return redirect()->route('contact')->with('info','Your message has been sent,Thank you.');
+        return redirect()->route('contact')->with('info', 'Your message has been sent,Thank you.');
 
     }
+
     public function storecomment(Request $request)
     {
         //dd($request);
         $data = new Comment();
-        $data->user_id =Auth::id();
+        $data->user_id = Auth::id();
         $data->service_id = $request->input('service_id');
         $data->subject = $request->input('subject');
         $data->comment = $request->input('comment');
-        $data->ip=$request->ip();
-        $data->rate=$request->input('rate');;
+        $data->ip = $request->ip();
+        $data->rate = $request->input('rate');;
         $data->save();
-        return redirect()->route('service',['id'=>$request->input('service_id')])->with('success','Your comment has been sent,Thank you.');
+        return redirect()->route('service', ['id' => $request->input('service_id')])->with('success', 'Your comment has been sent,Thank you.');
 
     }
 
@@ -113,11 +115,11 @@ class HomeController extends Controller
     {
         $data = Service::find($id);
         $images = DB::table('images')->where('service_id', $id)->get();
-        $review=Comment::where('service_id',$id)->where('status', 'True')->get();
+        $review = Comment::where('service_id', $id)->where('status', 'True')->get();
         return view('home.service', [
             'data' => $data,
             'images' => $images,
-            'review'=>$review
+            'review' => $review
         ]);
     }
 
@@ -138,38 +140,38 @@ class HomeController extends Controller
         return view('admin.login');
     }
 
-    public function logincheck(Request $request)
-    {
-
-        if ($request->isMethod('post')) {
-            $credentials = $request->validate([
-                'username' => ['required', 'username'],
-                'password' => ['required'],
-            ]);
-            if (Auth::attempt($credentials)) {
-                $request->session()->regenerate();
-
-                return redirect()->intended('admin');
-            }
-
-            return back()->withErrors([
-                'username' => 'The provided credentials do not match our records.',
-            ])->onlyInput('username');
-        } else {
-            return view('admin.login');
-        }
-    }
-
 
     public function test($id)
     {
         echo "Id Number:", $id;
     }
-    public function logout(Request $request){
+
+    public function logout(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
     }
+
+    public function loginadmincheck(Request $request)
+    {
+        //dd($request);
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/admin');
+        }
+
+        return back()->withErrors([
+            'error' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
+    }
+
 
 }

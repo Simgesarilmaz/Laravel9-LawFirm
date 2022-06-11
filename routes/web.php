@@ -28,7 +28,8 @@ Route::post('/storecomment',[HomeController::class,'storecomment'])->name('store
 Route::view('/loginuser','home.login');
 Route::view('/registeruser','home.register');
 Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
-
+Route::view('/loginadmin','admin.login');
+Route::get('/loginadmincheck',[HomeController::class,'loginadmincheck'])->name('loginadmincheck');
 
 
 Route::get('/test/{id}', [HomeController::class, 'test']
