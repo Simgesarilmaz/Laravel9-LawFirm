@@ -20,10 +20,15 @@
                     </div>
                     <div class="about-text">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
+                            facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                            viverra quis sem.
                         </p>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
+                            facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+                            viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur
+                            convallis porttitor. Aliquam interdum at lacus non blandit.
                         </p>
                         <a class="btn" href="">Learn More</a>
                     </div>
@@ -39,22 +44,24 @@
         <div class="container">
 
             <div class="section-header">
-                <h2>Our Practices Areas</h2>
+                <h2>Our Practices Araeas</h2>
             </div>
             <div class="row">
                 @foreach($servicelist1 as $rs)
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="height: 200px;width: 350px">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}"
+                                     style="height: 200px;width: 350px">
+                            </div>
+                            <h3>{{$rs->title}}</h3>
+                            <p>
+                                {{$rs->detail}}
+                            </p>
+                            <a class="btn" href="{{route('service',['id'=>$rs->id])}}">Learn More</a>
+
                         </div>
-                        <h3>{{$rs->title}}</h3>
-                        <p>
-                            {{$rs->detail}}
-                        </p>
-                        <a class="btn" href="{{route('service',['id'=>$rs->id])}}">Learn More</a>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -79,7 +86,8 @@
                         <div class="col-7">
                             <h3>Best law practices</h3>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
+                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
+                                velit non vulputate.
                             </p>
                         </div>
                     </div>
@@ -92,7 +100,8 @@
                         <div class="col-7">
                             <h3>Efficiency & Trust</h3>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
+                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
+                                velit non vulputate.
                             </p>
                         </div>
                     </div>
@@ -105,7 +114,8 @@
                         <div class="col-7">
                             <h3>Results you deserve</h3>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
+                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
+                                velit non vulputate.
                             </p>
                         </div>
                     </div>
@@ -216,66 +226,22 @@
                         <h2>Have A Questions?</h2>
                     </div>
                     <div id="accordion">
-                        <div class="card">
-                            <div class="card-header">
-                                <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
-                                    <span>1</span> Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                        @foreach($datalist as $rs)
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="card-link collapsed" data-toggle="collapse"
+                                       href="#collapse{{$loop->iteration}}">
+                                        {{$rs->question}}
+                                    </a>
+                                </div>
+                                <div id="collapse{{$loop->iteration}}" class="collapse"
+                                     data-parent="#accordion">
+                                    <div class="card-body">
+                                        {!!$rs->answer!!}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <a class="card-link" data-toggle="collapse" href="#collapseTwo">
-                                    <span>2</span> Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <a class="card-link" data-toggle="collapse" href="#collapseThree">
-                                    <span>3</span> Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <a class="card-link" data-toggle="collapse" href="#collapseFour">
-                                    <span>4</span> Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <a class="card-link" data-toggle="collapse" href="#collapseFive">
-                                    <span>5</span> Lorem ipsum dolor sit amet?
-                                </a>
-                            </div>
-                            <div id="collapseFive" class="collapse" data-parent="#accordion">
-                                <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <a class="btn" href="">Ask more</a>
                 </div>
@@ -347,7 +313,8 @@
                     <i class="fa fa-quote-right"></i>
                     <div class="row align-items-center">
                         <div class="col-3">
-                            <img src="{{asset('assets')}}/img/testimonial-4.jpg" alt="">
+                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}"
+                                 style="height: 200px;width: 350px">
                         </div>
                         <div class="col-9">
                             <h2>Client Name</h2>
@@ -434,7 +401,8 @@
                         <p>01-Jan-2045</p>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                        vulputate. Aliquam metus tortor
                     </p>
                     <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
                 </div>
@@ -448,7 +416,8 @@
                         <p>01-Jan-2045</p>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                        vulputate. Aliquam metus tortor
                     </p>
                     <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
                 </div>
@@ -462,7 +431,8 @@
                         <p>01-Jan-2045</p>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                        vulputate. Aliquam metus tortor
                     </p>
                     <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
                 </div>
@@ -476,7 +446,8 @@
                         <p>01-Jan-2045</p>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                        vulputate. Aliquam metus tortor
                     </p>
                     <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
                 </div>
@@ -490,7 +461,8 @@
                         <p>01-Jan-2045</p>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                        vulputate. Aliquam metus tortor
                     </p>
                     <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
                 </div>
@@ -504,7 +476,8 @@
                         <p>01-Jan-2045</p>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                        vulputate. Aliquam metus tortor
                     </p>
                     <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
                 </div>
@@ -518,7 +491,8 @@
                         <p>01-Jan-2045</p>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                        vulputate. Aliquam metus tortor
                     </p>
                     <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
                 </div>

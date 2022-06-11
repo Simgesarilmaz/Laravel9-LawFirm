@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Service;
@@ -25,12 +26,14 @@ class HomeController extends Controller
         $sliderdata = Service::limit(4)->get();
         $servicelist1 = Service::limit(6)->get();
         $setting = Setting::first();
+        $datalist = Faq::all();
 
         return view('home.index', [
             'page' => $page,
             'setting' => $setting,
             'sliderdata' => $sliderdata,
-            'servicelist1' => $servicelist1
+            'servicelist1' => $servicelist1,
+            'datalist' => $datalist
         ]);
     }
 
@@ -91,15 +94,30 @@ class HomeController extends Controller
         return redirect()->route('contact')->with('info','Your message has been sent,Thank you.');
 
     }
+    public function storecomment(Request $request)
+    {
+        //dd($request);
+        $data = new Comment();
+        $data->user_id =Auth::id();
+        $data->service_id = $request->input('service_id');
+        $data->subject = $request->input('subject');
+        $data->comment = $request->input('comment');
+        $data->ip=$request->ip();
+        $data->rate=$request->input('rate');;
+        $data->save();
+        return redirect()->route('service',['id'=>$request->input('service_id')])->with('success','Your comment has been sent,Thank you.');
+
+    }
 
     public function service($id)
     {
         $data = Service::find($id);
         $images = DB::table('images')->where('service_id', $id)->get();
-
+        $review=Comment::where('service_id',$id)->get();
         return view('home.service', [
             'data' => $data,
-            'images' => $images
+            'images' => $images,
+            'review'=>$review
         ]);
     }
 
