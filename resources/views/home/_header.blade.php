@@ -27,85 +27,78 @@
                             <a href=""><i class="fab fa-linkedin-in"></i></a>
                             <a href=""><i class="fab fa-instagram"></i></a>
                         </div>
-                        <div class="navbar-nav mr-auto">
+                        <div class="nav-item dropdown">
                             <div class="nav-item @if(!@isset($page)) show-on-click @endif dropdown">
                                 @auth
-                                    <div class="nav-item @if(!@isset($page)) show-on-click @endif dropdown">
-                                        <div class="header-btns-icon">
-                                            <i class="fa fa-user"></i>
-                                        </div>
-                                        <strong
-                                            class="text-uppercase">{{\Illuminate\Support\Facades\Auth::user()->name}}<i
-                                                class="fa fa-caret-down"></i> </strong>
-                                    </div>
+                                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                       aria-expanded="false">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
                                     <a href="/logoutuser" class="text-uppercase">Logout</a>
                                 @endauth
                                 @guest
                                     <a href="/loginuser" class="text-uppercase">Login</a> / <a href="/registeruser"
                                                                                                class="text-uppercase">Join</a>
                                 @endguest
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user-o"></i>My Account</a></li>
-                                    <li><a href="#"><i class="fa fa-check"></i>Checkout</a></li>
-                                    <li><a href="#"><i class="fa fa-unlock-alt"></i>Log in </a></li>
-                                    <li><a href="#"><i class="fa fa-user"></i>Create An Account</a></li>
-                                </ul>
-
-
+                                <div class="dropdown-menu">
+                                    <a href="{{route('userpanel.index')}}"><i class="fa fa-user-o"></i>My Account</a>
+                                    <a href="#"><i class="fa fa-check"></i>Checkout</a>
+                                    <a href="#"><i class="fa fa-unlock-alt"></i>Log in </a>
+                                    <a href="#"><i class="fa fa-user"></i>Create An Account</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Top Bar End -->
+    </div>
+    <!-- Top Bar End -->
 
-        <!-- Nav Bar Start -->
-        <div class="nav-bar">
-            <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-                    <a href="#" class="navbar-brand">MENU</a>
-                    @php
-                        $mainCategories=\App\Http\Controllers\HomeController::maincategorylist()
-                    @endphp
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav mr-auto">
-                            <div class="nav-item @if(!@isset($page)) show-on-click @endif dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
-                                <div class="dropdown-menu">
-                                    @foreach($mainCategories as $rs)
-                                        <a class="dropdown-item">{{$rs->title}}</a>
-                                        <div class="row">
-                                            @if(count($rs->children))
-                                                @include('home.categorytree',['children'=>$rs->children])
-                                            @endif
-                                        </div>
-                                    @endforeach
-                                </div>
+    <!-- Nav Bar Start -->
+    <div class="nav-bar">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                @php
+                    $mainCategories=\App\Http\Controllers\HomeController::maincategorylist()
+                @endphp
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+                        <div class="nav-item @if(!@isset($page)) show-on-click @endif dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
+                            <div class="dropdown-menu">
+                                @foreach($mainCategories as $rs)
+                                    <a class="dropdown-item">{{$rs->title}}</a>
+                                    <div class="row">
+                                        @if(count($rs->children))
+                                            @include('home.categorytree',['children'=>$rs->children])
+                                        @endif
+                                    </div>
+                                @endforeach
                             </div>
-                            <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
-                            <a href="{{route('about')}}" class="nav-item nav-link">About</a>
-                            <a href="{{route('references')}}" class="nav-item nav-link">References</a>
-                            <a href="service.html" class="nav-item nav-link">Practice</a>
-                            <a href="team.html" class="nav-item nav-link">Attorneys</a>
-                            <a href="portfolio.html" class="nav-item nav-link">Case Studies</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu">
-                                    <a href="blog.html" class="dropdown-item">Blog Page</a>
-                                    <a href="single.html" class="dropdown-item">Single Page</a>
-                                </div>
+                        </div>
+                        <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
+                        <a href="{{route('about')}}" class="nav-item nav-link">About</a>
+                        <a href="{{route('references')}}" class="nav-item nav-link">References</a>
+                        <a href="service.html" class="nav-item nav-link">Practice</a>
+                        <a href="team.html" class="nav-item nav-link">Attorneys</a>
+                        <a href="portfolio.html" class="nav-item nav-link">Case Studies</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu">
+                                <a href="blog.html" class="dropdown-item">Blog Page</a>
+                                <a href="single.html" class="dropdown-item">Single Page</a>
                             </div>
-                            <a href="{{route('faq')}}" class="nav-item nav-link">FAQ</a>
-                            <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
                         </div>
-
-                        <div class="ml-auto">
-                            <a class="btn" href="https://htmlcodex.com/law-firm-website-template">Get
-                                Appointment</a>
-                        </div>
+                        <a href="{{route('faq')}}" class="nav-item nav-link">FAQ</a>
+                        <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
                     </div>
-                </nav>
-            </div>
+
+                    <div class="ml-auto">
+                        <a class="btn" href="https://htmlcodex.com/law-firm-website-template">Get
+                            Appointment</a>
+                    </div>
+                </div>
+            </nav>
         </div>
+    </div>
 
