@@ -37,6 +37,15 @@
                         <p>
                             {!! $data->detail !!}
                         </p>
+                        <div>
+                            <div class="service-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
                         <a class="btn" href="">Learn More</a>
                     </div>
                 </div>
@@ -98,6 +107,7 @@
                                 <p>
                                     {{$rs->comment}}                            </p>
                             </div>
+
                         </div>
                 </div>
                 @endforeach
