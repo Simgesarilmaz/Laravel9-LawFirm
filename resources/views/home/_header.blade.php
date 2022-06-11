@@ -27,8 +27,8 @@
                             <a href=""><i class="fab fa-linkedin-in"></i></a>
                             <a href=""><i class="fab fa-instagram"></i></a>
                         </div>
-                        <div class="pull-right">
-                            <div class="dropdown-header">
+                        <div class="navbar-nav mr-auto">
+                            <div class="nav-item @if(!@isset($page)) show-on-click @endif dropdown">
                                 @auth
                                     <div class="nav-item @if(!@isset($page)) show-on-click @endif dropdown">
                                         <div class="header-btns-icon">
@@ -50,6 +50,8 @@
                                     <li><a href="#"><i class="fa fa-unlock-alt"></i>Log in </a></li>
                                     <li><a href="#"><i class="fa fa-user"></i>Create An Account</a></li>
                                 </ul>
+
+
                             </div>
                         </div>
                     </div>
