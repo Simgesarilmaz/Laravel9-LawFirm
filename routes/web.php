@@ -25,6 +25,10 @@ Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::post('/storemessage',[HomeController::class,'storemessage'])->name('storemessage');
 Route::get('/faq',[HomeController::class,'faq'])->name('faq');
 Route::post('/storecomment',[HomeController::class,'storecomment'])->name('storecomment');
+Route::view('/loginuser','home.login');
+Route::view('/registeruser','home.register');
+Route::get('/logoutuser',[HomeController::class,'logout'])->name('logoutuser');
+
 
 
 Route::get('/test/{id}', [HomeController::class, 'test']
@@ -105,9 +109,6 @@ Route::get('/service/{id}',[HomeController::class,'Service'])->name('service');
 Route::get('/categoryservices/{id}/{slug}',[HomeController::class,'categoryservices'])->name('categoryservices');
 
 
-Route::get('/admin/login',[HomeController::class, 'login']);
-Route::post('/admin/logincheck',[HomeController::class, 'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout',[HomeController::class, 'logout']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
