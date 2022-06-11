@@ -104,6 +104,17 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
 
     });
+    //******************ADMIN USER ROUTES**************************
+    Route::prefix('/user')->name('user.')->controller(\App\Http\Controllers\Admin\AdminUserController::class)->group(function() {
+        Route::get('/','index')->name('index');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::post('/update/{id}',  'update')->name('update');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+        Route::post('/addrole/{id}',  'addrole')->name('addrole');
+        Route::post('/destroyrole/{uid}/{rid}',  'destroyrole')->name('destroyrole');
+
+    });
 });
 
 Route::get('/service/{id}',[HomeController::class,'Service'])->name('service');

@@ -77,7 +77,9 @@ class MessageController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        $data=Message::find($id);
+        $data->save();
+        return redirect(route('admin.message.show',['id'=>$id]));
     }
 
     /**
