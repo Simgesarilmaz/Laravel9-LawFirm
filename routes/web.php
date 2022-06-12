@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -42,8 +41,10 @@ Route::post('/save', [HomeController::class, 'save'])->name('save');
 //****************** User Auths ROUTES**************************
 Route::middleware('auth')->group(function () {
 //****************** USER ROUTES********************************
-    Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
-        Route::get('/', [UserController::class, 'index'])->name('index');
+    Route::prefix('userpanel')->name('userpanel.')->controller(\App\Http\Controllers\UserController::class)->group(function () {
+        Route::get('/','index')->name('index');
+        Route::get('/reviews', 'reviews')->name('reviews');
+        Route::get('/reviewdestroy/{id}', 'reviewdestroy')->name('reviewdestroy');
 
     });
 //Admin

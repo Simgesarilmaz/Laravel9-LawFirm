@@ -41,7 +41,8 @@
                                 <div class="dropdown-menu">
                                     <a href="{{route('userpanel.index')}}"><i class="fa fa-user-o"></i>My Account</a>
                                     <a href="#"><i class="fa fa-check"></i>Checkout</a>
-                                    <a href="#"><i class="fa fa-unlock-alt"></i>Log in </a>
+                                    <a href="{{route('userpanel.reviews')}}"><i class="fa fa-comment"></i>My Review</a>
+                                    <a href="/logout"><i class="fa fa-unlock-alt"></i>Logout </a>
                                     <a href="#"><i class="fa fa-user"></i>Create An Account</a>
                                 </div>
                             </div>
