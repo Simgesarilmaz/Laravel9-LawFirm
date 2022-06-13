@@ -40,10 +40,10 @@
                                 @endguest
                                 <div class="dropdown-menu">
                                     <a href="{{route('userpanel.index')}}"><i class="fa fa-user-o"></i>My Account</a>
-                                    <a href="#"><i class="fa fa-check"></i>Checkout</a>
+                                    <a href="{{route('userpanel.appointment')}}"><i class="fa fa-check"></i>Appointment</a>
                                     <a href="{{route('userpanel.reviews')}}"><i class="fa fa-comment"></i>My Review</a>
                                     <a href="/logout"><i class="fa fa-unlock-alt"></i>Logout </a>
-                                    <a href="#"><i class="fa fa-user"></i>Create An Account</a>
+                                    <a href="/registeruser"><i class="fa fa-user"></i>Create An Account</a>
                                 </div>
                             </div>
                         </div>
@@ -80,9 +80,7 @@
                         <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
                         <a href="{{route('about')}}" class="nav-item nav-link">About</a>
                         <a href="{{route('references')}}" class="nav-item nav-link">References</a>
-                        <a href="service.html" class="nav-item nav-link">Practice</a>
-                        <a href="team.html" class="nav-item nav-link">Attorneys</a>
-                        <a href="portfolio.html" class="nav-item nav-link">Case Studies</a>
+                        <a href="{{route('attorney')}}" class="nav-item nav-link">Attorneys</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
@@ -95,7 +93,7 @@
                     </div>
 
                     <div class="ml-auto">
-                        <a class="btn" href="https://htmlcodex.com/law-firm-website-template">Get
+                        <a class="btn" href="{{route('userpanel.appointment')}}">Get
                             Appointment</a>
                     </div>
                 </div>

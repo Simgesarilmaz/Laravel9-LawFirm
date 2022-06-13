@@ -20,23 +20,23 @@
 
             </li>
             <li>
-                <a href="">
+                <a href="/admin/appointment">
                     <i class="fa fa-calendar-o text-blue "></i>
                     Appointments
                     <span class="fa arrow"></span>
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>New Appointments</a>
+                        <a href="{{route('admin.appointment.create')}}"><i class="fa fa-toggle-on"></i>New Appointments</a>
                     </li>
                     <li>
-                        <a href="notification.html"><i class="fa fa-bell "></i>Accepted Appointments</a>
+                        <a href="{{route('admin.appointment.accepted')}}"><i class="fa fa-bell "></i>Accepted Appointments</a>
                     </li>
                     <li>
-                        <a href="progress.html"><i class="fa fa-circle-o "></i>Pending Appointments</a>
+                        <a href="{{route('admin.appointment.pending')}}"><i class="fa fa-circle-o "></i>Pending Appointments</a>
                     </li>
                     <li>
-                        <a href="buttons.html"><i class="fa fa-code "></i>Completed Appointments</a>
+                        <a href="{{route('admin.appointment.completed')}}"><i class="fa fa-code "></i>Completed Appointments</a>
                     </li>
                 </ul>
             </li>
@@ -71,7 +71,7 @@
                 <a href="{{route('admin.user.index')}}"><i class="fa fa-users"></i>Users</a>
             </li>
             <li>
-                <a href="/admin/profile"><i class="fa fa-sitemap "></i>Profile</a>
+                <a href="{{route('admin.profile.index')}}"><i class="fa fa-sitemap "></i>Profile</a>
             </li>
             <li>
                 <a href="/admin/settings">
