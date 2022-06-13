@@ -25,7 +25,6 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Role</th>
-                                <th>Status</th>
                                 <th style="width: 40px">Show</th>
                                 <th style="width: 40px">Delete</th>
                             </tr>
@@ -40,8 +39,6 @@
                                         {{$role->name}}
                                     @endforeach
                                 </td>
-                                <td> </td>
-
                                 <td>
                                     <a href="{{route('admin.user.show',['id'=>$rs->id])}}" class="btn btn-success"
                                        onclick="return !window.open(this.href, '','top=50 left=100 width=1100,height=700')">
@@ -53,7 +50,6 @@
                                 </td>
                             </tr>
                             @endforeach
-                            </tbody>
                         </table>
                     </div>
                 </div>

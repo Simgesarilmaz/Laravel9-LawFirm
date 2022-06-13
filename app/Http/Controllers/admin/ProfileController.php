@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Profile;
+use App\Models\Profiles;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -15,8 +15,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $data=Profile::all();
-        return view('admin.profile.index',['data'=>$data]);
+        $data=Profiles::all();
+        return view('admin.profile.index',[
+            'data'=>$data,
+        ]);
     }
 
     /**
@@ -26,8 +28,13 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        $data=Profile::all();
-        return view('admin.profile.create',['data'=>$data]);
+        $users_all=Profiles::AllUsers();
+        $data=Profiles::all();
+        return view('admin.profile.create',[
+            'data'=>$data,
+            'users'=>$users_all
+
+        ]);
     }
 
     /**
@@ -38,7 +45,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $data=new Profile();
+        $data=new Profiles();
         $data->user_id=$request->user_id;
         $data->address=$request->address;
         $data->phone=$request->phone;
@@ -58,7 +65,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        $data=Profile::find($id);
+        $data=Profiles::find($id);
         return view('admin.profile.show',['data'=>$data]);
     }
 
@@ -70,9 +77,12 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        $data=Profile::find($id);
-
-        return view('admin.service.edit',['data'=>$data]);
+        $data=Profiles::find($id);
+        $users_all=Profiles::AllUsers();
+        return view('admin.profile.edit',[
+            'data'=>$data,
+            'users'=>$users_all
+        ]);
 
     }
 
@@ -85,7 +95,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data=Profile::find($id);
+        $data=Profiles::find($id);
         $data->user_id=$request->user_id;
         $data->address=$request->address;
         $data->phone=$request->phone;
@@ -105,7 +115,7 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-        $data=Profile::find($id);
+        $data=Profiles::find($id);
         $data->delete();
         return redirect('admin/profile');
     }
