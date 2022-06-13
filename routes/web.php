@@ -26,12 +26,15 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+Route::get('/attorney', [HomeController::class, 'attorney'])->name('attorney');
 Route::post('/storecomment', [HomeController::class, 'storecomment'])->name('storecomment');
 Route::view('/loginuser', 'home.login')->name('loginuser');;
 Route::view('/registeruser', 'home.register')->name('registeruser');;
 Route::get('/logoutuser', [HomeController::class, 'logout'])->name('logoutuser');
 Route::view('/loginadmin', 'admin.login')->name('loginadmin');;
 Route::get('/loginadmincheck', [HomeController::class, 'loginadmincheck'])->name('loginadmincheck');
+Route::get('/storeappointment', [HomeController::class, 'storeappointment'])->name('storeappointment');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 
 
 Route::get('/test/{id}', [HomeController::class, 'test']
@@ -45,8 +48,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/','index')->name('index');
         Route::get('/reviews', 'reviews')->name('reviews');
         Route::get('/reviewdestroy/{id}', 'reviewdestroy')->name('reviewdestroy');
+        Route::get('/appointment','appointment')->name('appointment');
+        Route::post('/appointment/store','appointment_store')->name('appointmentstore');
+        Route::get('/appointment/store_success','appointment_store_success')->name('appointmentstoresuccess');
+
 
     });
+
 //Admin
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('index');
@@ -114,6 +122,31 @@ Route::middleware('auth')->group(function () {
             Route::post('/update/{id}', 'update')->name('update');
             Route::get('/destroy/{id}', 'destroy')->name('destroy');
 
+        });
+        //******************ADMIN APPOINTMENT ROUTES**************************
+        Route::prefix('/appointment')->name('appointment.')->controller(\App\Http\Controllers\Admin\AppointmentController::class)->group(function () {
+
+            Route::get('/', 'index')->name('index');
+            Route::get('/create', 'create')->name('create');
+            Route::get('/show', 'show')->name('show');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/accepted', 'accepted')->name('accepted');
+            Route::get('/pending', 'pending')->name('pending');
+            Route::get('/completed', 'completed')->name('completed');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::get('/destroy/{id}', 'destroy')->name('destroy');
+
+        });
+        //******************ADMIN PROFILE ROUTES**************************
+        Route::prefix('/profile')->name('profile.')->controller(\App\Http\Controllers\Admin\ProfileController::class)->group(function () {
+
+            Route::get('/', 'index')->name('index');
+            Route::get('/create', 'create')->name('create');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/edit/{id}', 'edit')->name('edit');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::get('/destroy/{id}', 'destroy')->name('destroy');
+            Route::get('/show/{id}', 'show')->name('show');
         });
         //******************ADMIN USER ROUTES**************************
         Route::prefix('/user')->name('user.')->controller(\App\Http\Controllers\Admin\AdminUserController::class)->group(function () {

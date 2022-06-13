@@ -52,7 +52,7 @@
                                     @csrf
                                     <select name="role">
 
-                                        @foreach($data->roles as $role)
+                                        @foreach($roles as $role)
                                             <option value="{{$role->id}}">{{$role->name}} </option>
                                         @endforeach
                                         <option value=""></option>
