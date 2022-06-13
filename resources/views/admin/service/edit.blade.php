@@ -25,7 +25,7 @@
                                 <div class="form-group">
                                     <label>Parent Service</label>
 
-                                    <select class="form-control-select2" name="category_id" style="...">
+                                    <select class="form-control" name="category_id" style="...">
                                         @foreach($datalist as $rs)
                                             <option value="{{$rs->id}}"
                                                     @if($rs->id==$data->category_id) selected="selected" @endif>

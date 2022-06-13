@@ -28,7 +28,6 @@
                                 <th>Address</th>
                                 <th>Phone</th>
                                 <th>Image</th>
-                                <th style="...">Edit</th>
                                 <th style="...">Delete</th>
                                 <th style="...">Show</th>
 
@@ -49,7 +48,7 @@
                                             <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}"style="height: 40px ">
                                         @endif
                                     </td>
-                                    <td><a href="{{route('admin.profile.edit',['id'=>$rs->id])}}" class="btn btn-info">Edit</a></td>
+
                                     <td><a href="{{route('admin.profile.destroy',['id'=>$rs->id])}}"onclick="return confirm('Deleting!! Are you sure?')"class="btn btn-danger">Delete</a></td>
                                     <td><a href="{{route('admin.profile.show',['id'=>$rs->id])}}"class="btn btn-success">Show</a></td>
 

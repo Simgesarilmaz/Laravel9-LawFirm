@@ -22,6 +22,15 @@
                               enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
+                                <label>Lawyer Name</label>
+                                <select class="form-control" name="user_id">
+                                    <option value="0">Choose User</option>
+                                    @foreach($users as $rs)
+                                        value="{{$rs->id}}"> {{$rs->fullname}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label>Address</label>
                                 <input class="form-control" type="text" name="address" value="{{$data->address}}">
 

@@ -8,7 +8,7 @@ use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Message;
-use App\Models\Profile;
+use App\Models\Profiles;
 use App\Models\Service;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -135,7 +135,7 @@ class HomeController extends Controller
     }
     public function profile(Request $request)
     {
-        $datalist = Profile::all();
+        $datalist = Profiles::all();
 
         return view('home.profile', [
             'datalist' => $datalist,
