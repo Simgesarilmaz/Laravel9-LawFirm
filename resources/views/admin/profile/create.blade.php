@@ -21,7 +21,15 @@
                     <div class="panel-body">
                         <form role="form" action="{{route('admin.profile.store' )}}" method="post" enctype="multipart/form-data">
                             @csrf
-
+                            <div class="form-group">
+                                <label>Lawyer Name</label>
+                                <select class="form-control" name="user_id" style="...">
+                                    <option value="0" selected="selected">Choose User</option>
+                                    @foreach($users as $rs)
+                                        <option value="{{$rs->id}}">{{$rs->fullname}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label>Address</label>
                                 <input class="form-control" type="text" name="address">

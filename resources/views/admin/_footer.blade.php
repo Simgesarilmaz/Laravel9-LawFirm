@@ -11,16 +11,17 @@
 <script src="{{asset('assets')}}/js/jquery.metisMenu.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 <script>
-    if($(".summernote").length>0) {
-        ClassicEditor
-            .create(document.querySelector('.summernote'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }
+        $(".summernote").each(function() {
+            var $element = $(this).get(0);
+            ClassicEditor
+                .create($element)
+                .then(editor => {
+                    console.log(editor);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        });
 </script>
 <!-- CUSTOM SCRIPTS
 <script src="{{asset('assets')}}/js/custom.js"></script>

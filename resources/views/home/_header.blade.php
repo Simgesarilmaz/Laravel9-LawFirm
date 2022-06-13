@@ -80,7 +80,6 @@
                         <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
                         <a href="{{route('about')}}" class="nav-item nav-link">About</a>
                         <a href="{{route('references')}}" class="nav-item nav-link">References</a>
-                        <a href="{{route('attorney')}}" class="nav-item nav-link">Attorneys</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
