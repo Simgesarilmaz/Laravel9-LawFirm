@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\admin\ProfileController;
+use App\Models\Appointment;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Message;
+use App\Models\Profile;
 use App\Models\Service;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -27,13 +30,15 @@ class HomeController extends Controller
         $servicelist1 = Service::limit(6)->get();
         $setting = Setting::first();
         $datalist = Faq::all();
+        $comments=Comment::all();
 
         return view('home.index', [
             'page' => $page,
             'setting' => $setting,
             'sliderdata' => $sliderdata,
             'servicelist1' => $servicelist1,
-            'datalist' => $datalist
+            'datalist' => $datalist,
+            'comments'=>$comments
         ]);
     }
 
@@ -110,16 +115,47 @@ class HomeController extends Controller
         return redirect()->route('service', ['id' => $request->input('service_id')])->with('success', 'Your comment has been sent,Thank you.');
 
     }
+    public function storeappointment(Request $request)
+    {
+        //dd($request);
+        $data = new Appointment();
+        $data->user_id = Auth::id();
+        $data->service_id = $request->input('service_id');
+        $data->lawyer_id = $request->input('lawyer_id');
+        $data->date = $request->input('date');
+        $data->time = $request->input('time');
+        $data->price = $request->input('price');
+        $data->payment = $request->input('payment');
+        $data->ip = $request->ip();
+        $data->note = $request->input('note');
+        $data->status = $request->status;
+        $data->save();
+        return redirect()->route('service', ['id' => $request->input('service_id')])->with('success', 'Your appointment has been sent,Thank you.');
+
+    }
+    public function profile(Request $request)
+    {
+        $datalist = Profile::all();
+
+        return view('home.profile', [
+            'datalist' => $datalist,
+
+        ]);
+
+
+    }
 
     public function service($id)
     {
         $data = Service::find($id);
         $images = DB::table('images')->where('service_id', $id)->get();
         $review = Comment::where('service_id', $id)->where('status', 'True')->get();
+        $appointment = Appointment::where('service_id', $id)->where('status', 'True')->get();
         return view('home.service', [
             'data' => $data,
             'images' => $images,
-            'review' => $review
+            'review' => $review,
+            'appointment'=>$appointment
         ]);
     }
 
