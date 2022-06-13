@@ -105,6 +105,12 @@ class AdminUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function destroy($id)
+    {
+        $data=User::find($id);
+        $data->delete();
+        return redirect('admin/user');
+    }
     public function destroyrole($uid,$rid)
     {
         $user=User::find($uid);
