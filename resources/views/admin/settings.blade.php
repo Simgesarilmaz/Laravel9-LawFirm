@@ -170,7 +170,7 @@
                                          aria-labelledby="custom-tabs-one-about-tab">
                                         <div class="form-group">
                                             <label>About Us</label>
-                                            <textarea class="textarea summernote" id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
+                                            <textarea class="textarea " id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="custom-tabs-one-contact" role="tabpanel"

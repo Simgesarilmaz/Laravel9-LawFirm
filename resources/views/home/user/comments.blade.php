@@ -9,7 +9,7 @@
                     <h2>User Comment</h2>
                 </div>
                 <div class="col-12">
-                    <a href="">Home</a>
+                    <a href="{{route('home')}}">Home</a>
                     <a href="">User Panel</a>
                 </div>
             </div>
@@ -61,7 +61,6 @@
                                     </td>
                             </tr>
                             @endforeach
-                            </tbody>
                         </table>
 
                     </div>

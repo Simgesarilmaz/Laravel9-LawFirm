@@ -12,7 +12,7 @@
                     <h2>Contact Us</h2>
                 </div>
                 <div class="col-12">
-                    <a href="">Home</a>
+                    <a href="{{route('home')}}">Home</a>
                     <a href="">Contact Us</a>
                 </div>
             </div>

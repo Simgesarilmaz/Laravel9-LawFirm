@@ -86,8 +86,14 @@
                         <div class="col-7">
                             <h3>Best law practices</h3>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
-                                velit non vulputate.
+                                Our attorneys have worked at large law firms and have served as in-house and general
+                                counsel to large corporations and banks. We capitalize on our large law firm and
+                                in-house training to provide the highest level of service to our clients. Our attorneys
+                                have led, negotiated and closed hundreds of high-value business, real estate and
+                                commercial transactions for clients ranging from start-ups to Fortune 500 companies in
+                                numerous industries, including software, technology, life sciences, financial services,
+                                manufacturing, and retail. Our depth and breadth of experience allow us to expertly
+                                guide our clients through any transaction.
                             </p>
                         </div>
                     </div>
@@ -100,8 +106,11 @@
                         <div class="col-7">
                             <h3>Efficiency & Trust</h3>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
-                                velit non vulputate.
+                                Our firm is focused on our clients’ demands for an exceptional legal service model that
+                                provides value. We understand that, for clients, value is not a mere hourly rate
+                                comparison. Value means efficient processes for tracking and reporting; creative
+                                approaches to reducing legal risk; enhanced cost certainty; and RESULTS. With each
+                                representation,focused on the desired results.
                             </p>
                         </div>
                     </div>
@@ -114,8 +123,10 @@
                         <div class="col-7">
                             <h3>Results you deserve</h3>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
-                                velit non vulputate.
+                                Make sure you carefully consider which lawyer you hire to fight for your rights. We
+                                believe we’re the right law firm for you for many reasons. Don’t just take our word for
+                                it. Read our testimonials. Review our case results. We rise to the challenge when it
+                                matters most
                             </p>
                         </div>
                     </div>
@@ -313,8 +324,7 @@
                     <i class="fa fa-quote-right"></i>
                     <div class="row align-items-center">
                         <div class="col-3">
-                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}"
-                                 style="height: 200px;width: 350px">
+                            <img src="{{asset('assets')}}/img/testimonial-3.jpg" alt="">
                         </div>
                         <div class="col-9">
                             <h2>Client Name</h2>
